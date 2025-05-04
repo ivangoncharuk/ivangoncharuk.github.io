@@ -1,112 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Favicon -->
-    <!--     
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"> 
-    -->
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- FontAwesome and CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Ivan Goncharuk</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivan Goncharuk</title>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-jLKHWMZklYk7h9jP2+evJ1HsiYYN4q/8SIeZCkvpB4Gib3EAS8E2anhW1JSwvQ0M" crossorigin="anonymous" />
+  <!-- js-yaml -->
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <style>
+    body { margin:0; padding:1rem; background:#101214; color:#7A7C80; font-family:'Courier New',Courier,monospace; }
+    #dashboard { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+    .section { border:1px solid #00ffff; border-radius:4px; padding:0.75rem; cursor:pointer; transition:transform 0.2s; background:#1a1a1d; display:flex; flex-direction:column; }
+    .section:hover { transform:scale(1.02); }
+    .section-header { color:#00ffff; font-weight:bold; font-size:1.1em; margin-bottom:0.5rem; }
+    .section-content { flex:1; white-space:pre-wrap; overflow:hidden; }
+    .key { color:#8aff80; } .value { color:#ffffff; } .bullet { color:#ffcc00; }
+    a { color:#3498db; text-decoration:underline; }
+    .full { position:fixed; top:0; left:0; width:100vw; height:100vh; background:#101214; display:flex; flex-direction:column; z-index:1000; }
+    .back-btn { color:#ff6666; cursor:pointer; padding:1rem; }
+    .full .section { margin:1rem; flex:1; overflow:hidden; }
+    .full .section-content { flex:1; overflow:auto; padding-top:0; }
+    .full .section-content iframe { width:100%; height:100%; border:none; }
+    .group-header { color:#ff79c6; font-weight:bold; margin-top:0.5rem; }
+  </style>
 </head>
-
 <body>
-    <div class="grid-2">
-        <!-- Left Side (Profile) -->
-        <div class="section-1">
-            <img id="logo" src="img/letter-i-512x512.png" width="110" height="73" alt="Ivan Goncharuk Logo" />
-
-            <h2>Ivan Goncharuk</h2>
-            <p>Baltimore, MD</p>
-            <a class="jiggle-link" href="https://www.linkedin.com/in/ivangoncharuk/" aria-label="LinkedIn"><i
-                    class="fab fa-linkedin"></i></a>
-            <a class="jiggle-link" href="https://github.com/ivangoncharuk" aria-label="GitHub"><i
-                    class="fab fa-github"></i></a>
-            <a class="jiggle-link" href="mailto:goncharukivan.biz@gmail.com" aria-label="Email"><i
-                    class="fas fa-envelope"></i></a>
-        </div>
-
-        <!-- Right Side (Content) -->
-        <div class="section-2">
-            <h2>About</h2>
-            <p>I am a senior CS student at Towson University with an interest in cyber security, web and desktop
-                development.</p>
-
-            <h2>Courses Taken</h2>
-            <ul class="book">
-                <li><i class="fas fa-code"></i> COSC 412: Software Engineering</li>
-                <li><i class="fas fa-mobile-alt"></i> COSC 435: Mobile Application Development (Android)</li>
-                <li><i class="fas fa-cubes"></i> COSC 436: Object Oriented Design and Programming</li>
-                <li><i class="fas fa-cogs"></i> COSC 455: Programming Languages: Design and Implementation</li>
-                <li><i class="fas fa-database"></i> COSC 457: Database Management Systems</li>
-                <li><i class="fas fa-globe"></i> COSC 484: Web Programming</li>
-                <li><i class="fas fa-shield-alt"></i> CIS 377: Intro to Cyber Security</li>
-                <li><i class="fas fa-square-root-alt"></i> MATH 265: Elementary Linear Algebra</li>
-                <li><i class="fas fa-calculator"></i> MATH 273: Calculus I</li>
-                <li><i class="fas fa-calculator"></i> MATH 274: Calculus II</li>
-                <li><i class="fas fa-chart-bar"></i> MATH 330: Introduction to Statistical Methods</li>
-            </ul>
-
-            <h2>Projects</h2>
-            <ul>
-                <li><a class="jiggle-link" href="https://github.com/ivangoncharuk/crypkit"> crypkit</a>
-                    CLI tool for straightforward cryptographic operations.
-                </li>
-                <li><a class="jiggle-link" href="https://github.com/ivangoncharuk/AlgoViewer">AlgoViewer</a>
-                    Interactive Python Application for Visualizing Sorting Algorithms
-                </li>
-            </ul>
-
-            <h2>Info</h2>
-            <ul class="paper">
-                <li><a class="jiggle-link" href="resume_september2024.pdf">Resume</a></li>
-            </ul>
-
-            <h2>Interests</h2>
-            <p>Aside from my studies, I play pickleball and table tennis, and used to swim competitively.</p>
-        </div>
-    </div>
-
-    <!-- Dark/Light Theme Toggle -->
-    <div class="theme-toggle">
-        <label>
-            <input type="checkbox" id="theme-switch" />
-            <span></span>
-        </label>
-    </div>
-
-    <script>
-        // Theme toggle functionality
-        const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const themeSwitch = document.getElementById('theme-switch');
-
-        const applyTheme = (theme) => {
-            document.body.classList.remove('light-mode', 'dark-mode');
-            document.body.classList.add(theme);
-            localStorage.setItem('theme', theme);
-            themeSwitch.checked = theme === 'dark-mode';
-        };
-
-        const savedTheme = localStorage.getItem('theme') || (userPrefersDark ? 'dark-mode' : 'light-mode');
-        applyTheme(savedTheme);
-
-        themeSwitch.addEventListener('change', () => {
-            applyTheme(themeSwitch.checked ? 'dark-mode' : 'light-mode');
-        });
-    </script>
-
-    <script src="script.js"></script>
+  <div id="dashboard">Loading...</div>
+  <script>
+    fetch('config.yml')
+      .then(r=>r.text())
+      .then(text=>{
+        const data = jsyaml.load(text);
+        const dash = document.getElementById('dashboard'); dash.innerHTML = '';
+        function makeSection(title, summaryHtml, detailHtml) {
+          const sec = document.createElement('div'); sec.className='section'; sec.dataset.section=title;
+          const hdr = document.createElement('div'); hdr.className='section-header'; hdr.textContent=`[ ${title} ]`;
+          const cont = document.createElement('div'); cont.className='section-content'; cont.innerHTML=summaryHtml;
+          sec.append(hdr, cont);
+          sec.addEventListener('click',()=>expand(title, detailHtml, data));
+          dash.appendChild(sec);
+        }
+        // Profile
+        makeSection('Profile',
+          `<span class="key">Name:</span> <span class="value">${data.profile.name}</span><br>`+
+          `<span class="key">Loc:</span> <span class="value">${data.profile.location}</span>`,
+          `<span class=\"key\">Name:</span> <span class=\"value\">${data.profile.name}</span>\n`+
+          `<span class=\"key\">Loc:</span> <span class=\"value\">${data.profile.location}</span>`
+        );
+        // About
+        makeSection('About', `<span class=\"value\">${data.about}</span>`, `<span class=\"value\">${data.about}</span>`);
+        // Courses: group by department
+        const courseGroups = data.courses.reduce((acc, c) => {
+          const dept = c.label.split(' ')[0];
+          if (!acc[dept]) acc[dept] = [];
+          acc[dept].push(c);
+          return acc;
+        }, {});
+        const coursesSummary = Object.keys(courseGroups)
+          .map(dept => `• <span class="value">${dept} (${courseGroups[dept].length})</span>`)
+          .join('<br>');
+        const coursesDetail = Object.entries(courseGroups)
+          .map(([dept, cs]) => {
+            let lines = `<span class=\"group-header\">${dept}</span><br>`;
+            lines += cs.map(c => {
+              let line = `• <span class=\"value\">${c.label}</span>`;
+              if (c.teacher) line += ` — <span class=\"key\">${c.teacher}</span>`;
+              if (c.description) line += `<br><span class=\"value\">${c.description}</span>`;
+              return line;
+            }).join('<br>');
+            return lines;
+          }).join('<br><br>');
+        makeSection('Courses', coursesSummary, coursesDetail);
+        // Projects
+        const projSummary = data.projects.map(p=>`• <span class="key">${p.label}</span>`).join('<br>');
+        const projDetail = data.projects.map(p=>
+          `• <a href="${p.link}" target="_blank"><span class=\"key\">${p.label}</span></a>: <span class=\"value\">${p.description}</span>`
+        ).join('<br>');
+        makeSection('Projects', projSummary, projDetail);
+        // Info
+        const infoSummary = data.info.map(i=>`• <span class=\"key\">${i.label}</span>`).join('<br>');
+        const infoDetail = infoSummary;
+        makeSection('Info', infoSummary, infoDetail);
+        // Interests
+        makeSection('Interests', `<span class=\"value\">${data.interests}</span>`, `<span class=\"value\">${data.interests}</span>`);
+        // Expand overlay
+        function expand(title, html, data) {
+          const overlay = document.createElement('div'); overlay.className='full';
+          const btn = document.createElement('div'); btn.className='back-btn'; btn.textContent='← Back'; btn.onclick=()=>document.body.removeChild(overlay);
+          overlay.appendChild(btn);
+          const sec = document.createElement('div'); sec.className='section';
+          const hdr = document.createElement('div'); hdr.className='section-header'; hdr.textContent=`[ ${title} ]`;
+          const cont = document.createElement('div'); cont.className='section-content'; cont.innerHTML = html;
+          if (title === 'Info') {
+            const embed = document.createElement('iframe'); embed.src = data.info[0].link;
+            cont.appendChild(document.createElement('br'));
+            cont.appendChild(embed);
+          }
+          sec.append(hdr, cont);
+          overlay.appendChild(sec);
+          document.body.appendChild(overlay);
+        }
+      })
+      .catch(e=>{ document.getElementById('dashboard').textContent='Error loading config'; console.error(e); });
+  </script>
 </body>
-
 </html>

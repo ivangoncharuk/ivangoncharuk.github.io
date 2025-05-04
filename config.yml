@@ -1,0 +1,50 @@
+profile:
+  name: "Ivan Goncharuk"
+  location: "Baltimore, MD"
+  logo: "img/letter-i-512x512.png"
+  social:
+    linkedin: "https://www.linkedin.com/in/ivangoncharuk/"
+    github: "https://github.com/ivangoncharuk"
+    email: "mailto:goncharukivan.biz@gmail.com"
+
+about: |
+  I am a senior CS student at Towson University with an interest in cyber security,
+  web and desktop development.
+
+courses:
+  - icon: "fas fa-code"
+    label: "COSC 412: Software Engineering"
+  - icon: "fas fa-mobile-alt"
+    label: "COSC 435: Mobile Application Development (Android)"
+  - icon: "fas fa-cubes"
+    label: "COSC 436: Object Oriented Design and Programming"
+  - icon: "fas fa-cogs"
+    label: "COSC 455: Programming Languages: Design and Implementation"
+  - icon: "fas fa-database"
+    label: "COSC 457: Database Management Systems"
+  - icon: "fas fa-globe"
+    label: "COSC 484: Web Programming"
+  - icon: "fas fa-shield-alt"
+    label: "CIS 377: Intro to Cyber Security"
+  - icon: "fas fa-square-root-alt"
+    label: "MATH 265: Elementary Linear Algebra"
+  - icon: "fas fa-calculator"
+    label: "MATH 273: Calculus I"
+  - icon: "fas fa-calculator"
+    label: "MATH 274: Calculus II"
+  - icon: "fas fa-chart-bar"
+    label: "MATH 330: Introduction to Statistical Methods"
+
+projects:
+  - label: "crypkit"
+    description: "CLI tool for straightforward cryptographic operations."
+    link: "https://github.com/ivangoncharuk/crypkit"
+  - label: "AlgoViewer"
+    description: "Interactive Python Application for Visualizing Sorting Algorithms"
+    link: "https://github.com/ivangoncharuk/AlgoViewer"
+
+info:
+  - label: "Resume"
+    link: "resume_september2024.pdf"
+
+interests: "Aside from my studies, I like to play classical guitar, drums, and go active and play pickle-ball and longboard (usually to get to class)."
