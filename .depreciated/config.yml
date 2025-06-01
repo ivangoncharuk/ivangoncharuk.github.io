@@ -8,8 +8,7 @@ profile:
     email: "mailto:goncharukivan.biz@gmail.com"
 
 about: |
-  I am a senior CS student at Towson University with an interest in cyber security,
-  web and desktop development.
+  I am a graduate of Towson University with an interest in Database Administration and Software Engineering.
 
 courses:
   - icon: "fas fa-code"
@@ -44,7 +43,7 @@ projects:
     link: "https://github.com/ivangoncharuk/AlgoViewer"
 
 info:
-  - label: "Resume as of April 2025"
-    link: "RESUME_04_2025.pdf"
+  - label: "Resume as of May 2025"
+    link: "RESUME-MAY_2025.pdf"
 
 interests: "Aside from my studies, I like to play classical guitar, drums, and go active and play pickle-ball and longboard (usually to get to class)."
