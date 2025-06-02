@@ -21,6 +21,9 @@ jobs:
         with:
           hugo-version: 'latest'
 
+      - name: Pull theme submodules
+        run: git submodule update --init --recursive
+
       - name: Build
         run: hugo --minify
 
