@@ -1,0 +1,292 @@
+/* 
+  =============================
+  Dark Theme: SELECT ONE ONLY
+  To use a theme, uncomment it.
+  =============================
+*/
+
+/* red variant of tokyo night */
+
+/* ========= DARK MODE ======================================================= */
+
+.dark {
+    background: linear-gradient(to bottom, #392330, #120a10) !important;
+    color: #f8dcdc;
+}
+
+/* links & buttons */
+.dark a {
+    color: #ff6b81;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.dark a:hover {
+    color: #ff9ca3;
+}
+
+.dark .menu a.active {
+    color: #ff9ca3;
+    border-bottom: 2px solid #ff6b81;
+}
+
+.dark .button,
+.dark .post-tags a {
+    background-color: #ff6b81;
+    color: #1a0f16;
+}
+
+.dark .button:hover,
+.dark .post-tags a:hover {
+    background-color: #ff9ca3;
+    color: #1a0f16;
+}
+
+/* headings (keep neon glow) */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+    color: #ffc7d1;
+    transition: text-shadow .3s ease, color .3s ease;
+}
+
+.dark h1:hover,
+.dark h2:hover,
+.dark h3:hover,
+.dark h4:hover,
+.dark h5:hover,
+.dark h6:hover {
+    text-shadow: 0 0 4px #ff6b81, 0 0 10px #ff6b81, 0 0 16px #ff6b81;
+    color: #ffe3e9;
+}
+
+/* code blocks */
+.dark code,
+.dark pre code {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: .95em;
+}
+
+.dark code {
+    background: #2a0f1f;
+    color: #ff9ca3;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+.dark pre code {
+    display: block;
+    padding: 1em;
+    background: #2a0f1f;
+    border: 1px solid #ff6b81;
+    overflow-x: auto;
+    color: #ffd3dc;
+}
+
+/* post “cards” */
+.dark .post-entry,
+.dark .post-single,
+.dark .archive-entry {
+    background: #1a0f16;
+    /* slightly lighter panel */
+    margin: 1.75rem auto;
+    padding: 1.5rem 2rem;
+    border: none;
+    /* remove pink outline */
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .6);
+    max-width: 52rem;
+}
+
+/* ========= LIGHT MODE ====================================================== */
+
+body:not(.dark) {
+    background: linear-gradient(to bottom, #ffffff, #ff7777) !important;
+
+    /* Very light rose red background */
+    color: #333333;
+    /* Dark grey text for contrast */
+}
+
+/* links & buttons */
+body:not(.dark) a {
+    color: #D85B71;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+body:not(.dark) a:hover {
+    color: #E87B91;
+}
+
+/* Lighter rose red on hover */
+
+body:not(.dark) .menu a.active {
+    color: #D85B71;
+    border-bottom: 2px solid #D85B71;
+}
+
+body:not(.dark) .button,
+body:not(.dark) .post-tags a {
+    background-color: #D85B71;
+    /* Medium rose red */
+    color: #FFFFFF;
+    /* White text on buttons */
+}
+
+body:not(.dark) .button:hover,
+body:not(.dark) .post-tags a:hover {
+    background-color: #E87B91;
+    /* Lighter rose red on hover */
+    color: #FFFFFF;
+}
+
+/* headings (simple, no glow) */
+body:not(.dark) h1,
+body:not(.dark) h2,
+body:not(.dark) h3,
+body:not(.dark) h4,
+body:not(.dark) h5,
+body:not(.dark) h6 {
+    color: #A03B51;
+    /* Darker rose red for headings */
+    transition: none;
+    /* Remove transition for simplicity */
+}
+
+body:not(.dark) h1:hover,
+body:not(.dark) h2:hover,
+body:not(.dark) h3:hover,
+body:not(.dark) h4:hover,
+body:not(.dark) h5:hover,
+body:not(.dark) h6:hover {
+    text-shadow: none;
+    /* Remove text shadow */
+    color: #A03B51;
+    /* Keep same color on hover */
+}
+
+/* code blocks */
+body:not(.dark) code,
+body:not(.dark) pre code {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: .95em;
+}
+
+/* body:not(.dark) code {
+    background: #2a0f1f;
+    color: #ff9ca3;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+body:not(.dark) pre code {
+    display: block;
+    padding: 1em;
+    background: #2a0f1f;
+    border: 1px solid #ff6b81;
+    overflow-x: auto;
+    color: #e3ffd3;
+} */
+
+/* post “cards” - default look */
+body:not(.dark) .post-entry,
+body:not(.dark) .post-single,
+body:not(.dark) .archive-entry {
+    background: #FFFFFF;
+    /* White background for cards */
+    margin: 1.75rem auto;
+    padding: 1.5rem 2rem;
+    border: 1px solid #F0D0D0;
+    /* Very subtle light border */
+    border-radius: 10px;
+    box-shadow: none;
+    /* Remove box shadow as requested */
+    max-width: 52rem;
+}
+
+/* ================================================================================================ */
+
+/* === Dracula === */
+
+/* .dark {
+  background-color: #282a36 !important;
+  color: #f8f8f2;
+}
+
+.dark a {
+  color: #bd93f9;
+}
+
+.dark a:hover {
+  color: #ff79c6;
+} */
+
+
+/* === Gruvbox Dark === */
+/* eh */
+/* 
+.dark {
+  background-color: #1d2021 !important;
+  color: #ebdbb2;
+}
+
+.dark a {
+  color: #fabd2f;
+}
+
+.dark a:hover {
+  color: #fe8019;
+} */
+
+
+/* === Nord === */
+/*  also cool */
+/* .dark {
+  background-color: #2e3440 !important;
+  color: #d8dee9;
+}
+
+.dark a {
+  color: #88c0d0;
+}
+
+.dark a:hover {
+  color: #81a1c1;
+} */
+
+
+/* === Tokyo Night === */
+/* also cool */
+
+/* .dark {
+  background-color: #1a1b26 !important;
+  color: #c0caf5;
+}
+
+.dark a {
+  color: #7aa2f7;
+}
+
+.dark a:hover {
+  color: #bb9af7;
+} */
+
+
+/* === Default Minimal Dark === */
+/* this one is cool, he said */
+/* .dark {
+  background-color: #0c0c0c !important;
+  color: #d4d4d4;
+}
+
+.dark a {
+  color: #56b6c2;
+}
+
+.dark a:hover {
+  color: #88d8e5;
+} */
