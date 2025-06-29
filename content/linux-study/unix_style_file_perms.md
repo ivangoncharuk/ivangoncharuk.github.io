@@ -4,7 +4,6 @@ date: 2025-06-29
 draft: false
 toc: true
 tags: [cheatsheet, linux, bash]
-description: "Ultra-compact reference for rwx bits, octal modes, special bits, ACLs, and quick memory tricks.”
 ---
 
 
