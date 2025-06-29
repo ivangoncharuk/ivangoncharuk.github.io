@@ -10,8 +10,11 @@ description: "Cheatsheet reference for Unix Permissions, with explanations"
 
 # Outcome
 
-- Know at a glance how rwx maps to octal digits.
-- Set, fix, and audit permissions quickly (chmod, chown, setfacl).
+- Understand how rwx maps to octal digits.
+- Set, fix, and audit permissions quickly using:
+    - chmod
+    - chown
+    - setfacl
 - Remember what SUID / SGID / sticky and ACL do without Googling.
 
 ---
@@ -29,8 +32,16 @@ description: "Cheatsheet reference for Unix Permissions, with explanations"
 |   6   |  `rw-`   | Read + Write          |
 |   7   |  `rwx`   | Read + Write + Execute|
 
-- **Mnemonic:** `4` `2` `1` → `r` `w` `x`. Add them to get each digit.
-- **Example:** `chmod 640 file` → `rw-` `r--` `---` (owner can read/write, group can read, others have no permissions).
+**Mnemonic:** 
+`421` \rightarrow `rwx`
+
+Just add them to get each digit.
+
+**Example:** 
+
+`chmod 640 file` \rightarrow `rw-` `r--` `---` 
+
+(owner can read/write, group can read, others have no permissions).
 
 ---
 
