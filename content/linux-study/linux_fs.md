@@ -3,7 +3,7 @@ title: "Introduction to Linux Filesystem"
 date: 2025-06-29
 draft: false
 toc: true
-tags: [linux, rhcsa, bash]
+tags: [linux, bash]
 description: "A brief into to the Linux Filesystem. more notes will link back to here a lot."
 ---
 
@@ -25,7 +25,7 @@ description: "A brief into to the Linux Filesystem. more notes will link back to
 |<i class="bi bi-cpu"></i> `/proc` | Kernel + process pseudo-FS | `cat /proc/cpuinfo` = free hardware probe |
 |<i class="bi bi-motherboard"></i> `/sys` | Kernel objects, drivers | Modern cousin of `/proc`; tweak power/LEDs |
 |<i class="bi bi-trash"></i> `/tmp` | Scratch space | Auto-purged; don’t stash secrets |
-|<i class="bi bi-boot"></i> `/boot` | Kernel & bootloader bits (`vmlinuz`, `grub/`) | Small, often its own partition |
+|<i class="bi bi-power"></i> `/boot` | Kernel & bootloader bits (`vmlinuz`, `grub/`) | Small, often its own partition |
 
 ### Why the weird names?
 - `usr` ≠ “user” originally—*Unix System Resources* (`/usr/bin`).
@@ -37,9 +37,9 @@ description: "A brief into to the Linux Filesystem. more notes will link back to
 
 | OS | Root | Apps live in | User homes | Mount style |
 |----|------|--------------|------------|-------------|
-| Linux/*BSD | `/` | `/usr/bin`, `/opt` | `/home/ivan` | Any device mounts anywhere (`/mnt/usb`) via `fstab` |
-| macOS | `/` | `/Applications` (GUI), `/usr/bin` (CLI) | `/Users/ivan` | External drives auto-mount under `/Volumes` |
-| Windows | `C:\` | `C:\Program Files` / `Program Files (x86)` | `C:\Users\Ivan` | Letters (`D:\`, `E:\`) instead of grafting into a single tree |
+| <i class="bi bi-tux"></i> Linux/*BSD | `/` | `/usr/bin`, `/opt` | `/home/ivan` | Any device mounts anywhere (`/mnt/usb`) via `fstab` |
+| <i class="bi bi-apple"></i> macOS | `/` | `/Applications` (GUI), `/usr/bin` (CLI) | `/Users/ivan` | External drives auto-mount under `/Volumes` |
+| <i class="bi bi-microsoft"></i> Windows | `C:\` | `C:\Program Files` / `Program Files (x86)` | `C:\Users\Ivan` | Letters (`D:\`, `E:\`) instead of grafting into a single tree |
 
 ### Handy aliases & shortcuts
 - `~` → home dir (`/home/ivan`, `/Users/ivan`).
