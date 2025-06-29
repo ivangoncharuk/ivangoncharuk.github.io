@@ -4,6 +4,7 @@ date: 2025-06-29
 draft: false
 toc: true
 tags: [cheatsheet, linux, bash]
+description: "Cheatsheet reference for Unix Permissions, with explanations"
 ---
 
 
@@ -15,25 +16,23 @@ tags: [cheatsheet, linux, bash]
 
 ---
 
-# Permissions basics
+# Permissions Basics
 
-```
-Octal 	Symbolic	 Meaning
-0	 —	 no rights
-1	 –-x	 execute only
-2	 -w-	 write only
-3	 -wx	 write + execute
-4	 r–	 read only
-5	 r-x	 read + execute
-6	 rw read + write
-7	 rwx	 read + write + execute
-``` 
+| Octal | Symbolic | Meaning               |
+| :---: | :------: | --------------------- |
+|   0   |   `---`  | No rights             |
+|   1   |  `--x`   | Execute only          |
+|   2   |  `-w-`   | Write only            |
+|   3   |  `-wx`   | Write + Execute       |
+|   4   |  `r--`   | Read only             |
+|   5   |  `r-x`   | Read + Execute        |
+|   6   |  `rw-`   | Read + Write          |
+|   7   |  `rwx`   | Read + Write + Execute|
 
+- **Mnemonic:** `4` `2` `1` → `r` `w` `x`. Add them to get each digit.
+- **Example:** `chmod 640 file` → `rw-` `r--` `---` (owner can read/write, group can read, others have no permissions).
 
-- Mnemonic: 4 2 1 → r w x. Add them to get each digit.
-- Example: chmod 640 file → rw- r-- --- (owner rw, group r, world -).
-
-⸻
+---
 
 ## Cheat-sheet for common tasks
 
