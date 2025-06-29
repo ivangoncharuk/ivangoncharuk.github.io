@@ -1,7 +1,7 @@
 ---
 title: "Test Post: Hugo + PaperMod Full Feature Demo"
 date: 2025-06-02
-draft: true
+draft: false
 description: "Just a test post to showcase some supported features of Hugo using the PaperMod theme."
 tags: ["test"]
 toc: true
