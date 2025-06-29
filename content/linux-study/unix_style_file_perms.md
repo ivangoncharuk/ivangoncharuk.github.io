@@ -33,13 +33,13 @@ description: "Cheatsheet reference for Unix Permissions, with explanations"
 |   7   |  `rwx`   | Read + Write + Execute|
 
 **Mnemonic:** 
-`421` \rightarrow `rwx`
+`421` $\rightarrow$ `rwx`
 
 Just add them to get each digit.
 
 **Example:** 
 
-`chmod 640 file` \rightarrow `rw-` `r--` `---` 
+`chmod 640 file` $\rightarrow$ `rw-` `r--` `---` 
 
 (owner can read/write, group can read, others have no permissions).
 
