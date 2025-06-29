@@ -153,17 +153,7 @@ menu:
 pygmentsUseClasses: true
 
 markup:
-  highlight:
-    noClasses: false
-    style: "github"
-    # anchorLineNos: true
-    # codeFences: true
-    # guessSyntax: true
-    # lineNos: true
-    # style: monokai
   goldmark:
-    renderer:
-      unsafe: true # to allow raw HTML in markdown files
     extensions:
       passthrough:
         delimiters:
