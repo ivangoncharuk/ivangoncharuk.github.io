@@ -2,36 +2,43 @@
 title: "Pocket-Docs Site: quick start"
 date: 2025-06-29
 draft: false
+toc: true
 tags: [homelab, hugo, bash]
 description: "Step-by-step notes for my local Hugo vault, an on/off bash script, and uses Netlify push."
 ---
 
-My Pocket‐Docs Site Setup Guide
+---
+
+My private documentation site setup guide
 
 # Outcome
 
-- Local wiki/blog at ~/vault, one command on or off.
+- Local wiki/blog at `~/vault`, one command on or off.
 - Edits show up live the second you hit save.
 - Git keeps history & lets friends add stuff.
 - Pushes auto-build to Netlify so you can read it anywhere without opening ports.
 
 
-0. One-time setup (≈3 min)
+This one-time setup should take approx 3 min
 
 # Install Hugo
 
-If you haven't already installed Hugo on your system, use your own apropriate package manager.
+If you haven't already installed **Hugo** on your system, 
+use your own apropriate package manager.
 
-I am using macOS and the brew package manager here.
+In this guide, I'm using macOS with the **brew** package manager.
+
 ```bash  
 brew install hugo
 ``` 
 
 # Scaffold the site
+
 Assuming you want to make this **project** called `vault`:
 
 ```bash  
-hugo new site ~/vault && cd ~/vault
+hugo new site ~/vault && 
+cd ~/vault
 ``` 
 
 ```bash
@@ -43,7 +50,7 @@ git add . && git commit -m "fresh hugo vault"
 
 1. Tiny on/off script
 
-~/vault/`vaultctl`:
+inside `~/vault/vaultctl`:
 
 - First make the script file.
 - Use any name you wish for this toggle script.
@@ -53,12 +60,11 @@ git add . && git commit -m "fresh hugo vault"
 touch vaultctl.sh
 ```
 
-Next, this script in your "vaultctl" script, or whatever you've named it.
+Next, copy this script and add it in your `vaultctl.sh`, or whatever you've named it.
 
-```
-TODO: test and update docs for linux and windows in the future
+```python
+# TODO: test and update docs for linux and windows in the future
 ``` 
-
 
 ```bash
 #!/usr/bin/env bash
@@ -83,24 +89,44 @@ case "$1" in
 esac
 ```
 
-**⚠️Important!⚠️**
-Give the file execute permissions
+**⚠️Important⚠️**
+To be able to execute the file like
+`./vaultctl`,
+
+You must give the file execute permissions with `chmod` command:
+
 ```bash
 chmod +x vaultctl
 ```
 
-2. Daily moves
+2. How to use
 
-To fire it up run `./vaultctl`, make sure you gave the file execute permissions with chmod
-add a note	'hugo new docs/new-note.md' → edit → save
-save to git	
+To fire it, up run `./vaultctl`,
+make sure you gave the file execute 
+permissions with the `chmod` command.
+
+```python 
+# TODO: add post about chmod and file permissions in general, and how to read octals
+``` 
+
+```bash 
+hugo new docs/new-note.md' 
+# → edit → save
+``` 
+
+Save to git:
+
 ```bash
-git add . && git commit -m "note" && git push
+git add . &&
+git commit -m "note" && 
+git push
 ``` 
 
 turn it off by executing the toggle script `./vaultctl` to stop
 
-3. To let the the roomies post, too
+---
+
+3. To let others post
 
 ```bash
 # only need to do once
@@ -111,23 +137,32 @@ git push -u origin main     # push site + script
 
 Everyone edits markdown, pushes, done.
 
+---
+
 4. Ship a public clone (with **Netlify**, 60 sec)
 
 
-Now you’ve got https://*whatever*.**netlify.app** as the “on-the-road” copy; 
-and the home server stays private.
+Now you’ve got 
 
-+++
+https://*whatever*.**netlify.app** 
+
+as the “on-the-road” copy, and
+the home server stays private.
+
+---
 
 # Other TODOs, remove me in the future please!
 
+```python
+# TODO: add screenshot when I decide to use this
+# TODO: improve the netlify section for beginners
+# TODO: set personal reminder for myself to make these tutorials more often for personal reference.
+# TODO: add more personally useful bash scripts to this hugo site
+# TODO: add a gists post, or just use github
+# TODO: funny section of various scam texts I received over the years ane regularly update it.
 ```
-TODO: improve the netlify section for beginners
-TODO: set personal reminder for myself to make these tutorials more often for personal reference.
-TODO: add more personally useful bash scripts to this hugo site
-TODO: add a gists post, or just use github
-TODO: funny section of various scam texts I received over the years ane regularly update it.
-```
+
+---
 
 I cannot believe I wrote all this on my phone! ill probably forget to delete this sentence, but the chances anyone actually reaches this far,
  
