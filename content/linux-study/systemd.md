@@ -7,82 +7,74 @@ tags: [linux, init, systemd]
 description: "Why PID 1 matters, how SysV init worked, and what systemd brings to the party—minus the fluff."
 ---
 
-# Outcome
-- Grasp why PID 1 ("mommy process") owns every orphan on the box.
-- Recall the SysV init flow and its pain points.
-- Know what systemd bundles and why nerds argue about it.
+Outcome
+- {{< bi “eye-fill” >}} Understand why PID 1 (“mommy process”) owns every orphan on the box
+- {{< bi “clock-history” >}} Recall the SysV init flow & its pain points
+- 	{{< bi “diagram-3-fill” >}} Know what systemd bundles and why nerds argue about it
 
 ---
 
 ## PID 1 — the mommy process
 
-{{< bi "person-fill" >}} Starts first in the kernel’s user-space hand-off → gets PID 1.
-
-Every other process is its child, grandchild, or further down the tree.
-
-If a parent dies, PID 1 adopts the orphan so its exit status can be reaped (prevents zombies).
-
-Zombie = process finished execution but still holds a slot in the process table; init’s job is to wait() and clean it up.
+{{< bi “person-fill” >}} Starts first in the kernel’s user-space hand-off → gets PID 1
+{{< bi “diagram-3” >}} Every other process is its child, grandchild, or further down the tree
+{{< bi “emoji-smile-upside-down” >}} If a parent dies, PID 1 adopts the orphan so its exit status can be reaped (prevents zombies)
+{{< bi “bug-fill” >}} Zombie = process finished execution but still holds a slot in the table; init uses wait() to clean it up
 
 ---
 
-## SysV init 
+## SysV init {{< bi “archive-fill” >}}
 
-(a.k.a. Sys5 or "classic init")
+(a.k.a. Sys5 or “classic init”)
+- 	{{< bi “file-earmark-text” >}} Plain-text shell scripts in /etc/init.d/*
+- 	{{< bi “list-ol” >}} Scripts run sequentially via run-levels (/etc/rc*.d)
 
-	•	Plain-text shell scripts in /etc/init.d/*.
-	•	Scripts run sequentially through numbered run-levels (/etc/rc?.d).
-	•	Drawbacks
-	•	Serial startup = slow boot on modern machines.
-	•	No built-in dependency handling; you hand-craft the order.
-	•	Limited monitoring—if a service crashes, init often doesn’t notice.
-
----
-
-## systemd (sysd)
-
-(often nick-named sysd)
-
-Think of it as "init ++": 
-still PID 1, but also the conductor for system state and services.
-
-## What’s inside
-	•	systemctl – master CLI to start/stop/enable units.
-	•	journalctl – unified log viewer.
-	•	networkd, logind, timedated, etc. – micro-daemons for common subsystems.
-	•	Units replace old SysV scripts, describe deps in simple INI syntax.
-
-## Perks
-	•	{{< bi "lightning-charge-fill" >}} Parallel boot with dependency graph → faster startup.
-	•	{{< bi "heart-pulse-fill" >}} Built-in health monitoring & auto-restart.
-	•	{{< bi "clipboard-check" >}} Unified CLI (systemctl status nginx.service).
-
-## Controversies
-	•	Bigger footprint than minimalist folks like.
-	•	Binary journal files (/var/log/journal) instead of plain text.
-	•	Pros: indexed, structured, tamper-resistant.
-	•	Cons: need journalctl to read; harder with bare tools.
-	•	Want old school? Set Storage=none in journald.conf and traditional /var/log/*.log returns.
+Drawbacks {{< bi “slash-circle-fill” >}}
+- 	Serial startup ⇒ slow boot
+- 	No dependency handling — you hand-craft order
+- 	Limited monitoring — service crash may go unnoticed
 
 ---
 
-## Quick commands
+## systemd {{< bi “cpu-fill” >}}
 
-	•	Show PID 1: ps -p 1 -o comm= → systemd or init.
-	•	List orphan adoptees: ps -o pid,ppid,comm | awk '$2==1 && $1!=1'.
-	•	Tail last boot logs: journalctl -b -e.
+Think of it as “init ++”: still PID 1, but also conductor for system state and services.
+
+What’s inside
+- 	{{< bi “wrench-adjustable-circle” >}} systemctl — master CLI to start/stop/enable units
+- 	{{< bi “chat-dots-fill” >}} journalctl — unified log viewer
+- 	{{< bi “diagram-3-fill” >}} networkd, logind, timedated, etc. — micro-daemons
+- 	{{< bi “file-code-fill” >}} Units replace old scripts; simple INI syntax
+
+Perks
+- 	{{< bi “lightning-charge-fill” >}} Parallel boot with dependency graph → faster startup
+- 	{{< bi “heart-pulse-fill” >}} Built-in health monitoring & auto-restart
+- 	{{< bi “clipboard-check” >}} One CLI for everything (systemctl status nginx.service)
+
+Controversies {{< bi “question-diamond-fill” >}}
+- 	Bigger footprint than minimalist folks like
+- 	Binary journal files in /var/log/journal
+- 	Pros: indexed, structured, tamper-resistant
+- 	Cons: need journalctl; harder with plain tools
+- 	Want old school? set Storage=none in journald.conf
 
 ---
 
-## Memory prompts for exams
-
-	•	"Mom adopts orphans" → PID 1 waits on zombies.
-	•	SysV = scripts + run-levels; systemd = units + parallel boot.
-	•	Remember SUID, SGID, and Sticky bits from the permissions cheat-sheet.
+Quick commands {{< bi “terminal-fill” >}}
+- 	{{< bi “person-lines-fill” >}} Show PID 1: ps -p 1 -o comm=
+- 	{{< bi “people-fill” >}} List orphans adopted by PID 1:
+ps -o pid,ppid,comm | awk '$2==1 && $1!=1'
+- 	{{< bi “journal-bookmark-fill” >}} Tail last boot logs: journalctl -b -e
 
 ---
 
-# Todos
+Memory prompts for exams {{< bi “brain” >}}
+- 	“Mom adopts orphans” → PID 1 waits on zombies
+- 	SysV = scripts + run-levels; systemd = units + parallel boot
+- 	Recall SUID, SGID, Sticky bits from the permissions cheat-sheet
 
-- [ ] Mini post on writing a simple .service unit.
-- [ ] Compare OpenRC vs systemd in Alpine/Gentoo land.
+---
+
+Todos {{< bi “check2-square” >}}
+- 	Mini post on writing a simple .service unit
+- 	Compare OpenRC vs systemd on Alpine/Gentoo
