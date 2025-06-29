@@ -7,7 +7,6 @@ tags: [linux, permissions, chmod]
 description: “Ultra-compact reference for rwx bits, octal modes, special bits, ACLs, and quick memory tricks.”
 ---
 
-
 # Outcome
 
 - Know at a glance how rwx maps to octal digits.
