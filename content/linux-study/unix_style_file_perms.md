@@ -1,11 +1,12 @@
 ---
-title: “Unix Permissions Cheat-Sheet: rwx, octals & ACL”
+title: "Unix Permissions Cheat-Sheet"
 date: 2025-06-29
 draft: false
 toc: true
-tags: [linux, permissions, chmod]
-description: “Ultra-compact reference for rwx bits, octal modes, special bits, ACLs, and quick memory tricks.”
+tags: [cheatsheet, linux, bash]
+description: "Ultra-compact reference for rwx bits, octal modes, special bits, ACLs, and quick memory tricks.”
 ---
+
 
 # Outcome
 
