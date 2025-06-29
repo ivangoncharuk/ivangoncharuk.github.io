@@ -1,3 +1,12 @@
+---
+title: "Introduction to Linux Filesystem"
+date: 2025-06-29
+draft: false
+toc: true
+tags: [linux, rhcsa, bash]
+description: "A brief into to the Linux Filesystem. more notes will link back to here a lot."
+---
+
 ## Linux Filesystem cheatsheet
 
 | Dir | What’s in there | Quick vibe |
