@@ -37,7 +37,7 @@ description: "A brief into to the Linux Filesystem. more notes will link back to
 
 | OS | Root | Apps live in | User homes | Mount style |
 |----|------|--------------|------------|-------------|
-| <i class="bi bi-tux"></i> Linux/*BSD | `/` | `/usr/bin`, `/opt` | `/home/ivan` | Any device mounts anywhere (`/mnt/usb`) via `fstab` |
+| U+F904 Linux/*BSD | `/` | `/usr/bin`, `/opt` | `/home/ivan` | Any device mounts anywhere (`/mnt/usb`) via `fstab` |
 | <i class="bi bi-apple"></i> macOS | `/` | `/Applications` (GUI), `/usr/bin` (CLI) | `/Users/ivan` | External drives auto-mount under `/Volumes` |
 | <i class="bi bi-microsoft"></i> Windows | `C:\` | `C:\Program Files` / `Program Files (x86)` | `C:\Users\Ivan` | Letters (`D:\`, `E:\`) instead of grafting into a single tree |
 
