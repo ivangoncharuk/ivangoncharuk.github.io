@@ -153,19 +153,9 @@ menu:
 pygmentsUseClasses: true
 
 markup:
+  highlight:
+    noClasses: false
   goldmark:
-    extensions:
-      passthrough:
-        delimiters:
-          block:
-          - - \[
-            - \]
-          - - $$
-            - $$
-          inline:
-          - - \(
-            - \)
-        enable: true
-params:
-  math: true
+    renderer:
+      unsafe: true  # to allow raw HTML in markdown files
 
