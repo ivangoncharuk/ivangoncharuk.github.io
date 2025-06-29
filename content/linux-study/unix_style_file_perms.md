@@ -7,10 +7,12 @@ tags: [linux, permissions, chmod]
 description: “Ultra-compact reference for rwx bits, octal modes, special bits, ACLs, and quick memory tricks.”
 ---
 
+
 # Outcome
-	•	Know at a glance how rwx maps to octal digits.
-	•	Set, fix, and audit permissions quickly (chmod, chown, setfacl).
-	•	Remember what SUID / SGID / sticky and ACL do without Googling.
+
+- Know at a glance how rwx maps to octal digits.
+- Set, fix, and audit permissions quickly (chmod, chown, setfacl).
+- Remember what SUID / SGID / sticky and ACL do without Googling.
 
 ---
 
@@ -37,7 +39,7 @@ Octal 	Symbolic	 Meaning
 ## Cheat-sheet for common tasks
 
 ```
-Task	Command
+Task	 Command
 Give owner execute	chmod u+x script.sh
 Remove “others” write	chmod o-w *.md
 Exact mode (octal)	chmod 755 /usr/local/bin/tool
@@ -70,7 +72,7 @@ Sticky	1	On dirs: only owner may delete own files (e.g. /tmp)
 - Add rule: setfacl -m u:alice:rw file
 - View rules: getfacl file
 - Works on ext4, XFS, APFS
-		- Windows NTFS uses ACLs by default (icacls).
+- Windows NTFS uses ACLs by default (icacls).
 
 ---
 
