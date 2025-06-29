@@ -16,10 +16,13 @@ description: "Why PID 1 matters, how SysV init worked, and what systemd brings t
 
 ## PID 1 — the mommy process
 
-	•	{{< bi "person-fill" >}} Starts first in the kernel’s user-space hand-off → gets PID 1.
-	•	Every other process is its child, grandchild, or further down the tree.
-	•	If a parent dies, PID 1 adopts the orphan so its exit status can be reaped (prevents zombies).
-	•	Zombie = process finished execution but still holds a slot in the process table; init’s job is to wait() and clean it up.
+{{< bi "person-fill" >}} Starts first in the kernel’s user-space hand-off → gets PID 1.
+
+Every other process is its child, grandchild, or further down the tree.
+
+If a parent dies, PID 1 adopts the orphan so its exit status can be reaped (prevents zombies).
+
+Zombie = process finished execution but still holds a slot in the process table; init’s job is to wait() and clean it up.
 
 ---
 
