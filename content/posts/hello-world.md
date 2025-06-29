@@ -10,6 +10,16 @@ toc: true
 Welcome! This post exists to **test and demonstrate** all the key features supported by the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme in Hugo.  
 This will help verify your theme setup and content rendering.
 
+---
+
+## 🧮 MathJax Test
+
+Einstein said \(E = mc^2\).
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$
+
 ***
 
 ## ✍️ Typography
@@ -74,3 +84,4 @@ def greet(name):
 
 print(greet("Hugo User"))
 ```
+
