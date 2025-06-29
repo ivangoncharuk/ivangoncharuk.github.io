@@ -1,12 +1,11 @@
-
-⸻
-
+---
 title: “Unix Permissions Cheat-Sheet: rwx, octals & ACL”
 date: 2025-06-29
 draft: false
 toc: true
 tags: [linux, permissions, chmod]
 description: “Ultra-compact reference for rwx bits, octal modes, special bits, ACLs, and quick memory tricks.”
+---
 
 Outcome
 	•	Know at a glance how rwx maps to octal digits.
